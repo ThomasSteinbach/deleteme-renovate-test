@@ -6,8 +6,9 @@
     "ansible-galaxy": {
         "enabled": false
     },
-    "regexManagers": [
+    "customManagers": [
         {
+            "customType": "regex",
             "fileMatch": [
                 "requirements.yaml"
             ],
