@@ -12,7 +12,7 @@
                 "requirements.yaml"
             ],
             "matchStrings": [
-                "name:\\s*(?<depName>https://github.com/(?<packageName>[a-zA-Z0-9_.-]+/[a-zA-Z0-9_.-]+))\\.git\\n.*?type:\\s*git\\n.*?version:\\s*(?<currentValue>v[0-9]+\\.[0-9]+\\.[0-9]+)"
+                "- name:\\s*(?<depName>https://github.com/(?<packageName>\\w[\\w.-/]+))\\.git\\n.*?type:\\s*git\\n.*?version:\\s*(?<currentValue>v?[0-9]+\\.[0-9]+\\.[0-9]+)"
             ],
             "datasourceTemplate": "github-tags",
             "depNameTemplate": "{{ packageName }}"
