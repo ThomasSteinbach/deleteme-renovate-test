@@ -6,14 +6,11 @@
     "ansible-galaxy": {
         "enabled": false
     },
-    "regexManagers": [
+    "customManagers": [
         {
-            "fileMatch": [
-                "requirements.yaml"
-            ],
-            "matchStrings": [
-                "- name:\\s*(?<depName>https://github.com/(?<packageName>[a-zA-Z][\\w\\-/]+))\\.git\\n.*?type:\\s*git\\n.*?version:\\s*(?<currentValue>v?[0-9]+\\.[0-9]+\\.[0-9]+)"
-            ],
+            "customType": "regex",
+            "managerFilePatterns": ["/requirements.yaml/"],
+            "matchStrings": ["- name:\\s*(?<depName>https://github.com/(?<packageName>[a-zA-Z][\\w\\-/]+))\\.git\\n.*?type:\\s*git\\n.*?version:\\s*(?<currentValue>v?[0-9]+\\.[0-9]+\\.[0-9]+)"],
             "datasourceTemplate": "github-tags",
             "depNameTemplate": "{{ packageName }}"
         }
